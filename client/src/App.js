@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
-import { Switch, Route, Redirect } from "react-router-dom";
+import "./App.scss";
+import { Switch, Route, Redirect, Link } from "react-router-dom";
 
 // import ProjectList from './components/projects/ProjectList';
 import Navbar from "./components/navbar/Navbar";
@@ -9,6 +9,7 @@ import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
+import Landing from "./components/landing/landing";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -62,8 +63,8 @@ class App extends Component {
             <header className="App-header">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
-              <Contents />
             </header>
+            <Contents />
           </div>
         </React.Fragment>
       );
@@ -71,15 +72,18 @@ class App extends Component {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-          <Redirect to="/login" />
+          <Redirect to="/landing" />
 
           <div className="App">
             <header className="App-header">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} /> 
             </header>
+            
             <Switch>
                 <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
                 <Route exact path="/login" render={() => <Login getUser={this.getUser} />} />
+                <Route exact path='/landing' component={Landing}/>
+
             </Switch>
           </div>
         </React.Fragment>

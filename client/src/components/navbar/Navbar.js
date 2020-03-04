@@ -1,10 +1,10 @@
 // navbar/Navbar.js
 
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Switch, Route, Redirect, Link } from "react-router-dom";
 import AuthService from "../auth/AuthService";
-import logo from "../../logo-ironhack-blue.png";
-import "./Navbar.css"
+import logo from "../navbar/logo.png";
+import "./Navbar.scss"
 
 class Navbar extends Component {
   constructor(props) {
@@ -25,17 +25,20 @@ class Navbar extends Component {
     if (this.state.loggedInUser) {
       return (
         <nav className="nav-style">
-          <ul>
-            <li>
-              <a onClick={this.handleLogout}>Logout</a>
-            </li>
-          </ul>
-
           <div className="header">
-            <img src={logo} alt="" height="100"/>
-            <h2>Welcome {this.state.loggedInUser.username} - Ironhacker</h2>
+            <Link to='/landing'><img src={logo} alt="" height="100" /></Link>
+            {/* <h2>Welcome {this.state.loggedInUser.username}</h2> */}
+
+            <ul>
+              <li>
+                <a onClick={this.handleLogout}>Logout</a>
+              </li>
+            </ul>
+
           </div>
         </nav>
+
+        
       );
     } else {
       return (
