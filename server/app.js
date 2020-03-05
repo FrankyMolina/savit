@@ -28,7 +28,8 @@ const app = express();
 
 // Middleware Setup
 var whitelist = [
-  'http://localhost:3000'
+  'http://localhost:3000',
+  'https://savit-app.herokuapp.com/'
 ];
 var corsOptions = {
   origin: function(origin, callback){
