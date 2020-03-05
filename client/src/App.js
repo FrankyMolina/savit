@@ -7,7 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 // import ProjectDetails from './components/projects/ProjectDetails';
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
-import AuthService from "./components/auth/AuthService";
+import AuthService from "./services/AuthService";
 import Contents from "./components/contents/Contents";
 import Landing from "./components/landing/landing";
 
@@ -66,6 +66,10 @@ class App extends Component {
             </header>
             <Contents />
           </div>
+
+          <Switch>
+            {/* <Route exact path='/landing' component={Landing} /> */}
+          </Switch>
         </React.Fragment>
       );
     } else {
