@@ -27,7 +27,7 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 const app = express();
 
 // Middleware Setup
-var whitelist = [
+/* var whitelist = [
   'http://localhost:3000',
   'https://savit-app.herokuapp.com/'
 ];
@@ -38,7 +38,8 @@ var corsOptions = {
   },
   credentials: true
 };
-app.use(cors(corsOptions));
+app.use(cors(corsOptions)); */
+app.use(cors())
 
 // Middleware Setup
 app.use(bodyParser.json());
