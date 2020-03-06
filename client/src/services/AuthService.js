@@ -5,17 +5,18 @@ class AuthService {
   constructor() {
     this.service = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/auth`,
-      withCredentials: true
+      withCredentials: true,
+      headers: {'Access-Control-Allow-Origin': '*'}
     });
   }
 
   signup = (username, password) => {
-    return this.service.post('/signup', {username, password})
+    return this.service.post('/signup', {username, password}, )
     .then(response => response.data)
   }
 
   login = (username, password) => {
-    return this.service.post('/login', {username, password})
+    return this.service.post('/login', {username, password}, { headers: {'Access-Control-Allow-Origin': '*'}})
     .then(response => response.data)
   }
 

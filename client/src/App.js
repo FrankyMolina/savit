@@ -57,18 +57,19 @@ class App extends Component {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-          <Redirect to="/home" />
+          {/* <Redirect to="/home" /> */}
 
           <div className="App">
             <header className="App-header">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
             </header>
-            <Contents />
+            {/* <Contents /> */}
           </div>
 
           <Switch>
-            {/* <Route exact path='/landing' component={Landing} /> */}
+            <Route exact path='/landing' component={Landing} />
+            
           </Switch>
         </React.Fragment>
       );
