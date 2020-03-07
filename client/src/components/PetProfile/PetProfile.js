@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom';
 
 import PetService from '../../services/PetService';
 
-export default class Pets extends React.Component {
+export default class PetProfile extends React.Component {
   petService = new PetService();
 
   state = {
-    pets: []
+    pet: {}
   };
 
   componentDidMount() {
+    const id = this.props.match.params.id;
+
     this.petService
-      .allPets()
-      .then(data => this.setState({ pets: data }))
+      .petById(id)
+      .then(pet => {
+        this.setState({ pet });
+      })
       .catch(err => console.log(err));
   }
 
@@ -33,20 +37,11 @@ export default class Pets extends React.Component {
   //   updated_at: "2020-03-05T15:35:22.359Z"
 
   render() {
+
+    console.log(this.state)
     return (
       <div className="Pets">
-        <h1>Pets route.</h1>
-
-        <ul>
-          {this.state.pets.map(pet => (
-            <li key={pet._id}>
-              <Link to={`/pet/${pet._id}`}>
-                <img src={pet.img} alt={pet.name} width="350" />
-                <h3>Name: {pet.name}</h3>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <h1>Pets Profile.</h1>
       </div>
     );
   }

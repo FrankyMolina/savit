@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect, Link } from "react-router-dom";
 
-// import ProjectList from './components/projects/ProjectList';
-import Navbar from "./components/navbar/Navbar";
-// import ProjectDetails from './components/projects/ProjectDetails';
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
-import AuthService from "./services/AuthService";
-import Contents from "./components/contents/Contents";
+import Navbar from "./components/navbar/Navbar";
 import Landing from "./components/landing/landing";
 import Pets from "./components/Pets/Pets"
+import PetProfile from "./components/PetProfile/PetProfile"
+
+import AuthService from "./services/AuthService";
 
 import "./App.scss";
 
@@ -59,6 +58,7 @@ class App extends Component {
             {/* Logged in application routes */}
 
             <Route exact path="/pets" component={Pets} />
+            <Route exact path="/pet/:id" component={PetProfile} />
             <Route render={() => <Redirect to="/pets" />} />
           </Switch>
         ) : (
