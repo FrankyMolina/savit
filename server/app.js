@@ -3,7 +3,6 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
-const hbs = require('hbs');
 const mongoose = require('mongoose');
 const path = require('path');
 const session = require('express-session');
@@ -13,7 +12,7 @@ const cors = require('cors');
 const { DBURL } = process.env;
 mongoose.Promise = Promise;
 mongoose
-  .connect(DBURL)
+  .connect(DBURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log(`Connected to Mongo on ${DBURL}`)
   }).catch(err => {
@@ -63,19 +62,10 @@ app.use(session({
 }));
 require('./passport')(app);
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
-
-// default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
-
-
 
 const index = require('./routes');
 app.use('/', index);
-
-
 
 app.use((req, res) => {
   res.sendFile(__dirname + "/public/index.html");
