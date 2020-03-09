@@ -13,9 +13,17 @@ class AssociationService {
     return this.service.get('/').then(response => response.data);
   };
 
-  associationById = (id) => {
+  associationById = id => {
     return this.service.get(`/${id}`).then(response => response.data);
-  }
+  };
+
+  postAssociation = assoc => {
+    this.service.post('/new', assoc).then(response => response.data);
+  };
+
+  // postNewPet = newPet => {
+  //   this.service.post(`/${id}/new-pet`, newPet).then(response => response.data);
+  // };
 }
 
 export default AssociationService;

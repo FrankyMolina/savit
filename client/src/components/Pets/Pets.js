@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import PetService from '../../services/PetService';
 
+import './Pets.scss';
+
 export default class Pets extends React.Component {
   petService = new PetService();
 

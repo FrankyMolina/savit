@@ -9,6 +9,9 @@ import Pets from "./components/Pets/Pets"
 import PetProfile from "./components/PetProfile/PetProfile"
 import Associations from "./components/association/Associations"
 import AssociationProfile from "./components/AssociationProfile/AssociationProfile"
+import NewAssociation from "./components/NewAssociation/NewAssociation"
+import NewPet from "./components/NewPet/NewPet"
+
 
 import AuthService from "./services/AuthService";
 
@@ -63,6 +66,8 @@ class App extends Component {
             <Route exact path="/pet/:id" component={PetProfile} />
             <Route exact path="/associations" component={Associations}/>
             <Route exact path="/associations/:id" component={AssociationProfile}/>
+            <Route exact path="/new-association" component={NewAssociation}/>
+            <Route exact path="/new-pet" component={NewPet}/>
             <Route render={() => <Redirect to="/pets" />} />
           </Switch>
         ) : (

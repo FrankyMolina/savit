@@ -11,7 +11,8 @@ export default class Associations extends React.Component {
   };
 
   componentDidMount() {
-    this.associationService.allAssociations()
+    this.associationService
+      .allAssociations()
       .then(data => this.setState({ association: data }))
       .catch(err => console.log(err));
   }
@@ -26,13 +27,19 @@ export default class Associations extends React.Component {
     return (
       <div className="Associations">
         <h1>Associations page.</h1>
+
+        <div className="Associations__create">
+          <h2>¿Quieres crear tu asociación?</h2>
+          <Link to="/new-association">Crear asociación</Link>
+        </div>
+
         <ul>
           {this.state.association.map(assoc => (
             <li key={assoc._id}>
               <Link to={`/associations/${assoc._id}`}>
-                <h3>Nombre: {assoc.name}</h3>
-                <p>Teléfono de contacto: {assoc.tel}</p>
-                <p>Localidad: {assoc.location}</p>
+                <h3>
+                  {assoc.name} ({assoc.location})
+                </h3>
               </Link>
             </li>
           ))}
