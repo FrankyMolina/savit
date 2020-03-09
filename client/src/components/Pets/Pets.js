@@ -35,14 +35,12 @@ export default class Pets extends React.Component {
   render() {
     return (
       <div className="Pets">
-        <h1>Pets route.</h1>
-
         <ul>
           {this.state.pets.map(pet => (
             <li key={pet._id}>
               <Link to={`/pet/${pet._id}`}>
                 <img src={pet.img} alt={pet.name} width="350" />
-                <h3>Name: {pet.name}</h3>
+                <h3>Nombre: {pet.name}</h3>
               </Link>
             </li>
           ))}

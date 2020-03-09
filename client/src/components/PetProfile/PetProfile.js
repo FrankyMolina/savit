@@ -37,11 +37,34 @@ export default class PetProfile extends React.Component {
   //   updated_at: "2020-03-05T15:35:22.359Z"
 
   render() {
-
-    console.log(this.state)
+    console.log(this.state);
     return (
-      <div className="Pets">
-        <h1>Pets Profile.</h1>
+      <div className="PetProfile">
+        <h1>Profile of {this.state.pet.name}</h1>
+
+        <img src={this.state.pet.img} alt={this.state.pet.name} />
+        <h2>{this.state.pet.name}</h2>
+
+        <ul>
+          <li>Edad: {this.state.pet.age} years</li>
+          <li>Sexo: {this.state.pet.sex}</li>
+          <li>Raza: {this.state.pet.race}</li>
+          <li>Peso: {this.state.pet.weight} Kg.</li>
+          <li>
+            ¿Perro Potencialmente Peligroso?:{' '}
+            {this.state.pet.ppp === true
+              ? 'Sí, está considerado como peligroso'
+              : 'No está considerado como peligroso.'}
+          </li>
+          <li>
+            Sociable:{' '}
+            {this.state.pet.friendly === true
+              ? 'totalmente amigable con otros animales, y personas.'
+              : 'Tiene dificultades para relacionarse con otros animales...'}
+          </li>
+          <li>Estado veterinario: {this.state.pet.vet}</li>
+          <li>Localización: {this.state.pet.location}</li>
+        </ul>
       </div>
     );
   }

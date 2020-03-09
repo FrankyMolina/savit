@@ -1,35 +1,43 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import logo from "../navbar/logo_transparent.png";
+import logo from '../navbar/logo_transparent.png';
 
-import "./Navbar.scss"
+import './Navbar.scss';
 
 export default class Navbar extends Component {
   render() {
     return (
       <nav className="Navbar">
-        <Link to='/'><img src={logo} alt="savit-logo" height="80" /></Link>
+        <Link to="/">
+          <img src={logo} alt="savit-logo" height="80" />
+        </Link>
 
         <ul className="Navbar__list">
-          {this.props.userInSession
-            ? (
+          {this.props.userInSession ? (
+            <>
+              <li>
+                <Link to="/pets">Pets</Link>
+              </li>
+              <li>
+                <Link to="/associations">Asociaciones</Link>
+              </li>
               <li>
                 <a onClick={this.props.logout}>Logout</a>
               </li>
-            )
-            : (
-              <>
-                <li>
-                  <Link to="/signup">Signup</Link>
-                </li>
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-              </>
-            )}
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/signup">Signup</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
-    )
+    );
   }
 }

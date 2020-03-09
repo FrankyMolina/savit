@@ -7,6 +7,8 @@ import Navbar from "./components/navbar/Navbar";
 import Landing from "./components/landing/landing";
 import Pets from "./components/Pets/Pets"
 import PetProfile from "./components/PetProfile/PetProfile"
+import Associations from "./components/association/Associations"
+import AssociationProfile from "./components/AssociationProfile/AssociationProfile"
 
 import AuthService from "./services/AuthService";
 
@@ -59,6 +61,8 @@ class App extends Component {
 
             <Route exact path="/pets" component={Pets} />
             <Route exact path="/pet/:id" component={PetProfile} />
+            <Route exact path="/associations" component={Associations}/>
+            <Route exact path="/associations/:id" component={AssociationProfile}/>
             <Route render={() => <Redirect to="/pets" />} />
           </Switch>
         ) : (
