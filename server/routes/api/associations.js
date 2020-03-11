@@ -43,6 +43,8 @@ router.post('/:id/new-pet', (req, res, next) => {
     assocId: req.params.id
   };
 
+  console.log(newPet)
+
   Pet.create(newPet)
     .then(createPet => res.json(createPet))
     .catch(err => console.log(err));

@@ -35,7 +35,7 @@ export default class AssociationProfile extends React.Component {
         <p>Teléfono de contacto: {this.state.association.tel}</p>
         <p>Localidad: {this.state.association.location}</p>
 
-        <Link to="/new-pet">Crear nuevo anuncio</Link>
+        <Link to={`/associations/${this.state.association._id}/new-pet`}>Crear nuevo anuncio</Link>
 
         <ul>
           <li> Perretes aquí</li>

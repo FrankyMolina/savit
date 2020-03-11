@@ -25,11 +25,6 @@ export default class NewAssociation extends React.Component {
     this.associationService.postAssociation(this.state);
   };
 
-  // "pets": [],
-  // "_id": "5e611f2d1408de3914b943b4",
-  // "name": "Asociación protectora de Sevilla",
-  // "tel": 622642988,
-  // "location": "Sevilla",
 
   render() {
     return (

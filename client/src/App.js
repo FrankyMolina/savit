@@ -65,9 +65,9 @@ class App extends Component {
             <Route exact path="/pets" component={Pets} />
             <Route exact path="/pet/:id" component={PetProfile} />
             <Route exact path="/associations" component={Associations}/>
-            <Route exact path="/associations/:id" component={AssociationProfile}/>
+            <Route path="/associations/:id/new-pet" component={NewPet}/>
+            <Route path="/associations/:id" component={AssociationProfile}/>
             <Route exact path="/new-association" component={NewAssociation}/>
-            <Route exact path="/new-pet" component={NewPet}/>
             <Route render={() => <Redirect to="/pets" />} />
           </Switch>
         ) : (
