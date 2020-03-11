@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import AssociationService from '../../services/AssociationService';
+import AuthService from '../../services/AuthService';
 
 export default class AssociationProfile extends React.Component {
   associationService = new AssociationService();
+  authService = new AuthService();
 
   state = {
-    association: {}
+    association: {},
+    user: {}
   };
 
   componentDidMount() {
@@ -19,6 +22,13 @@ export default class AssociationProfile extends React.Component {
         this.setState({ association });
       })
       .catch(err => console.log(err));
+
+    this.authService
+      .loggedin()
+      .then(user => {
+        this.setState({ user });
+      })
+      .catch(err => console.log(err));
   }
 
   // "pets": [],
@@ -28,18 +38,34 @@ export default class AssociationProfile extends React.Component {
   // "location": "Sevilla",
 
   render() {
-    console.log(this.state);
+    console.log(this.state.association.owner, this.state.user._id);
     return (
       <div className="AssociationProfile">
-        <h1>Perfil de {this.state.association.name}</h1>
-        <p>Teléfono de contacto: {this.state.association.tel}</p>
-        <p>Localidad: {this.state.association.location}</p>
+        {this.state.association.owner === this.state.user._id ? (
+          <>
+            <h1>Perfil de {this.state.association.name}</h1>
+            <p>Teléfono de contacto: {this.state.association.tel}</p>
+            <p>Localidad: {this.state.association.location}</p>
 
-        <Link to={`/associations/${this.state.association._id}/new-pet`}>Crear nuevo anuncio</Link>
+            <Link to={`/associations/${this.state.association._id}/new-pet`}>
+              Crear nuevo anuncio
+            </Link>
 
-        <ul>
-          <li> Perretes aquí</li>
-        </ul>
+            <ul>
+              <li> Perretes aquí</li>
+            </ul>
+          </>
+        ) : (
+          <>
+            <h1>Perfil de {this.state.association.name}</h1>
+            <p>Teléfono de contacto: {this.state.association.tel}</p>
+            <p>Localidad: {this.state.association.location}</p>
+
+            <ul>
+              <li> Perretes aquí</li>
+            </ul>
+          </>
+        )}
       </div>
     );
   }

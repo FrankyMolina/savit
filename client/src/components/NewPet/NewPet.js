@@ -12,8 +12,8 @@ export default class NewAssociation extends React.Component {
     sex: '',
     race: '',
     weight: 0,
-    ppp: null, //*boolean
-    friendly: null, //*boolean
+    ppp: false,
+    friendly: false,
     vet: '',
     location: '',
     assocId: ''
@@ -22,9 +22,14 @@ export default class NewAssociation extends React.Component {
   componentDidMount() {}
 
   handleChange = e => {
-    console.log(e.target.value);
     const { name, value } = e.target;
+
     this.setState({ [name]: value });
+  };
+
+  handleChangeCheck = e => {
+    const { name, checked } = e.target;
+    this.setState({ [name]: checked });
   };
 
   handleFormSubmit = e => {
@@ -96,7 +101,7 @@ export default class NewAssociation extends React.Component {
             <label>Peso:</label>
             <input
               type="number"
-              name="age"
+              name="weight"
               value={this.state.weight}
               onChange={e => this.handleChange(e)}
             />
@@ -109,8 +114,8 @@ export default class NewAssociation extends React.Component {
             <input
               type="checkbox"
               name="ppp"
-              value={this.state.ppp}
-              onChange={e => this.handleChange(e)}
+              checked={this.state.ppp}
+              onChange={this.handleChangeCheck}
             />
           </fieldset>
 
@@ -119,8 +124,8 @@ export default class NewAssociation extends React.Component {
             <input
               type="checkbox"
               name="friendly"
-              value={this.state.friendly}
-              onChange={e => this.handleChange(e)}
+              checked={this.state.friendly}
+              onChange={this.handleChangeCheck}
             />
           </fieldset>
 
