@@ -3,6 +3,7 @@ const router = express.Router();
 
 const Association = require('../../models/Association');
 const Pet = require('../../models/Pet');
+const User = require('../../models/User');
 
 router.get('/', (req, res, next) => {
   Association.find()
@@ -16,7 +17,7 @@ router.get('/:id', (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-router.post('/new', (req, res, next) => {
+router.post('/new/:userId', (req, res, next) => {
   let newAssoc = {
     name: req.body.name,
     tel: req.body.tel,
@@ -24,7 +25,12 @@ router.post('/new', (req, res, next) => {
     owner: req.user._id
   };
   Association.create(newAssoc)
-    .then(theAssociation => res.json(theAssociation))
+    .then(_ => {
+      User.findByIdAndUpdate(req.user._id, {
+        role: 'Asociación'
+      })
+      .then(response => res.json(response))
+    })
     .catch(err => console.log(err));
 });
 

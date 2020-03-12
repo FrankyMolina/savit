@@ -53,8 +53,7 @@ export default class PetProfile extends React.Component {
             </ul>
           </div>
         </div>
-        <Link to={`/associations/${this.state.pet.assocId}`}> Adoptar </Link>
-        <Link to={`/associations/${this.state.pet.assocId}`}> Acoger </Link>
+        <Link to={`/associations/${this.state.pet.assocId}`}> Adoptar / Acoger </Link>
       </div>
     );
   }

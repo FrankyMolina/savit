@@ -17,7 +17,7 @@ export default class Navbar extends Component {
           {this.props.userInSession ? (
             <>
               <li>
-                <Link to="/pets">Pets</Link>
+                <Link to="/pets">Mascotas</Link>
               </li>
               <li>
                 <Link to="/associations">Asociaciones</Link>

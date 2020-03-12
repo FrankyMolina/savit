@@ -17,8 +17,8 @@ class AssociationService {
     return this.service.get(`/${id}`).then(response => response.data);
   };
 
-  postAssociation = assoc => {
-    this.service.post('/new', assoc).then(response => response.data);
+  postAssociation = (assoc, userId) => {
+    this.service.post(`/new/${userId}`, assoc).then(response => response.data);
   };
 
   newPet = data => {

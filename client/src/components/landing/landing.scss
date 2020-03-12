@@ -1,10 +1,18 @@
+.Landing {
+  .Landing-img {
+    width: 100vw;
+  }
 
-.landing{
+  &__container {
+    display: flex;
+    justify-content: space-around;
 
-    
-    img{
-    
-        width: 100vw;
-    
+    &__whatsSavit {
+        width: 25%;
     }
+
+    &__howWorks {
+        width:25%;
+    }
+  }
 }
