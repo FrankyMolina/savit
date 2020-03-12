@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
+
 const Association = require('../../models/Association');
-const Pet = require('../../models/Pet')
+const Pet = require('../../models/Pet');
 
 router.get('/', (req, res, next) => {
   Association.find()
@@ -9,11 +10,10 @@ router.get('/', (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-
 router.get('/:id', (req, res, next) => {
   Association.findById(req.params.id)
-  .then(singleAssociation => res.json(singleAssociation))
-  .catch(err => console.log(err));
+    .then(singleAssociation => res.json(singleAssociation))
+    .catch(err => console.log(err));
 });
 
 router.post('/new', (req, res, next) => {
@@ -24,8 +24,8 @@ router.post('/new', (req, res, next) => {
     owner: req.user._id
   };
   Association.create(newAssoc)
-  .then(theAssociation => res.json(theAssociation))
-  .catch(err => console.log(err));
+    .then(theAssociation => res.json(theAssociation))
+    .catch(err => console.log(err));
 });
 
 router.post('/:id/new-pet', (req, res, next) => {
@@ -43,7 +43,7 @@ router.post('/:id/new-pet', (req, res, next) => {
     assocId: req.params.id
   };
 
-  console.log(newPet)
+  console.log(newPet);
 
   Pet.create(newPet)
     .then(createPet => res.json(createPet))

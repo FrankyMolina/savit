@@ -25,8 +25,8 @@ export default class NewAssociation extends React.Component {
     this.associationService.postAssociation(this.state);
   };
 
-
   render() {
+    console.log(this.state);
     return (
       <div className="NewAssociation">
         <h1>NEW Associations page.</h1>
@@ -54,7 +54,11 @@ export default class NewAssociation extends React.Component {
 
           <fieldset>
             <label>Localidad:</label>
-            <input list="localidades" name="location" onChange={e => this.handleChange(e)}/>
+            <input
+              list="localidades"
+              name="location"
+              onChange={e => this.handleChange(e)}
+            />
             <datalist id="localidades">
               <option value="Madrid" />
               <option value="Sevilla" />
