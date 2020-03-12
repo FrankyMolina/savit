@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import AssociationService from '../../services/AssociationService';
 import AuthService from '../../services/AuthService';
 
+import ShowPetsOnAssociation from '../ShowPetsOnAssociation/ShowPetsOnAssociation'
+
 export default class AssociationProfile extends React.Component {
   associationService = new AssociationService();
   authService = new AuthService();
@@ -38,7 +40,7 @@ export default class AssociationProfile extends React.Component {
   // "location": "Sevilla",
 
   render() {
-    console.log(this.state.association.owner, this.state.user._id);
+    // console.log(this.state.association.owner, this.state.user._id);
     return (
       <div className="AssociationProfile">
         {this.state.association.owner === this.state.user._id ? (
@@ -50,10 +52,6 @@ export default class AssociationProfile extends React.Component {
             <Link to={`/associations/${this.state.association._id}/new-pet`}>
               Crear nuevo anuncio
             </Link>
-
-            <ul>
-              <li> Perretes aquí</li>
-            </ul>
           </>
         ) : (
           <>
@@ -61,11 +59,9 @@ export default class AssociationProfile extends React.Component {
             <p>Teléfono de contacto: {this.state.association.tel}</p>
             <p>Localidad: {this.state.association.location}</p>
 
-            <ul>
-              <li> Perretes aquí</li>
-            </ul>
           </>
         )}
+        <ShowPetsOnAssociation/>
       </div>
     );
   }
