@@ -41,8 +41,8 @@ export default class Pets extends React.Component {
           {this.state.pets.map(pet => (
             <li key={pet._id}>
               <Link to={`/pet/${pet._id}`}>
-                <img src={pet.img} alt={pet.name} width="350" />
-                <h3>Nombre: {pet.name}</h3>
+                <img src={pet.img} alt={pet.name} />
+                <h3>{pet.name}</h3>
               </Link>
             </li>
           ))}

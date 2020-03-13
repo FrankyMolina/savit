@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import PetService from '../../services/PetService';
 
+import './PetProfile.scss';
+
 export default class PetProfile extends React.Component {
   petService = new PetService();
 
@@ -25,10 +27,9 @@ export default class PetProfile extends React.Component {
     console.log(this.state);
     return (
       <div className="PetProfile">
-        <h1>Profile of {this.state.pet.name}</h1>
-        <div>
+        <div className="PetProfile__container">
           <img src={this.state.pet.img} alt={this.state.pet.name} />
-          <div>
+          <div className="PetProfile__container__details">
             <h2>{this.state.pet.name}</h2>
 
             <ul>
@@ -51,9 +52,13 @@ export default class PetProfile extends React.Component {
               <li>Estado veterinario: {this.state.pet.vet}</li>
               <li>Localización: {this.state.pet.location}</li>
             </ul>
+            <div className="btn">
+              <Link to={`/associations/${this.state.pet.assocId}`}>
+                ¡¡Lo salvo!!
+              </Link>
+            </div>
           </div>
         </div>
-        <Link to={`/associations/${this.state.pet.assocId}`}> Adoptar / Acoger </Link>
       </div>
     );
   }

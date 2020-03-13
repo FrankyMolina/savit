@@ -2,6 +2,8 @@ import React from 'react';
 
 import AssociationService from '../../services/AssociationService';
 
+import './NewPet.scss';
+
 export default class NewAssociation extends React.Component {
   associationService = new AssociationService();
 
@@ -44,7 +46,7 @@ export default class NewAssociation extends React.Component {
     console.log(this.state);
     return (
       <div className="NewPet">
-        <h1>NEW pet page.</h1>
+        <h1>Crea el anuncio para tu mascota</h1>
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
@@ -55,6 +57,7 @@ export default class NewAssociation extends React.Component {
               name="img"
               value={this.state.img}
               onChange={e => this.handleChange(e)}
+              placeholder="URL"
             />
           </fieldset>
 
@@ -116,6 +119,7 @@ export default class NewAssociation extends React.Component {
               name="ppp"
               checked={this.state.ppp}
               onChange={this.handleChangeCheck}
+              className="checkbox"
             />
           </fieldset>
 
@@ -126,6 +130,7 @@ export default class NewAssociation extends React.Component {
               name="friendly"
               checked={this.state.friendly}
               onChange={this.handleChangeCheck}
+              className="checkbox"
             />
           </fieldset>
 
@@ -148,7 +153,10 @@ export default class NewAssociation extends React.Component {
               onChange={e => this.handleChange(e)}
             />
           </fieldset>
-          <input type="submit" value="Nueva publicación" />
+
+          <div className="NewPet__btn">
+            <input type="submit" value="Nueva publicación" />
+          </div>
         </form>
       </div>
     );

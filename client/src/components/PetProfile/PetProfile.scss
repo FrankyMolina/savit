@@ -1,0 +1,68 @@
+.PetProfile {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  &__container {
+    display: flex;
+    justify-content: space-around;
+
+    img {
+      width: 600px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.61);
+    }
+
+    &__details {
+      h2 {
+        color: #4d4d4d;
+        border-bottom: 1.5px solid #6ac3ae;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+      .btn {
+        text-align: center;
+        text-decoration: none;
+        transition: 0.3s;
+        border: 0;
+        border-radius: 10px;
+        padding: 7px;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        background-color: #83cfbd6c;
+
+        a {
+          color: #4d4d4d;
+          font-size: 16px;
+          font-weight: bold;
+          transition: 0.3s;
+          text-decoration: none;
+        }
+
+        &:hover {
+          background-color: #6ac3ae;
+          border-radius: 10px;
+          box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.685);
+
+          a {
+            font-size: 25px;
+            color: white;
+          }
+        }
+      }
+
+      ul {
+        background-color: #83cfbd6c;
+        border-radius: 10px;
+        padding: 60px;
+        box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.61);
+        list-style-type: none;
+        line-height: 2.5;
+
+        li {
+          border-bottom: 1.5px solid #6ac3ae;
+        }
+      }
+    }
+  }
+}
