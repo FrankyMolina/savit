@@ -1,0 +1,48 @@
+.Associations {
+  margin-top: 150px;
+
+  text-align: center;
+
+  color: #4d4d4d;
+  font-weight: bold;
+
+  &__create {
+    padding-bottom: 25px;
+
+    border-bottom: 1.5px solid #6ac3ae;
+
+    &__btn {
+      text-decoration: none;
+      transition: 0.3s;
+      background-color: #6ac3ae;
+      border-radius: 10px;
+      padding: 7px;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      color: white;
+
+      &:hover {
+        font-size: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.685);
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+
+    li a {
+      text-decoration: none;
+      color: black;
+      transition: 0.3s;
+
+      &:hover {
+        font-size: 20px;
+      }
+    }
+  }
+}

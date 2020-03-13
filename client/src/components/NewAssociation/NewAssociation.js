@@ -2,6 +2,8 @@ import React from 'react';
 
 import AssociationService from '../../services/AssociationService';
 
+import './NewAssociation.scss';
+
 export default class NewAssociation extends React.Component {
   associationService = new AssociationService();
 
@@ -29,7 +31,7 @@ export default class NewAssociation extends React.Component {
     console.log(this.state);
     return (
       <div className="NewAssociation">
-        <h1>NEW Associations page.</h1>
+        <h1>¡Crea tu asociación!</h1>
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
@@ -66,7 +68,9 @@ export default class NewAssociation extends React.Component {
             </datalist>
           </fieldset>
 
-          <input type="submit" value="Crear nueva asociación" />
+          <div className="NewAssociation__btn">
+            <input type="submit" value="Crear nueva asociación" />
+          </div>
         </form>
       </div>
     );

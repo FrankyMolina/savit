@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import AssociationService from '../../services/AssociationService';
 
+import './Associations.scss';
+
 export default class Associations extends React.Component {
   associationService = new AssociationService();
 
@@ -26,13 +28,12 @@ export default class Associations extends React.Component {
   render() {
     return (
       <div className="Associations">
-        <h1>Associations page.</h1>
-
         <div className="Associations__create">
           <h2>¿Quieres crear tu asociación?</h2>
-          <Link to="/new-association">Crear asociación</Link>
+          <Link to="/new-association" className="Associations__create__btn">Crear asociación</Link>
         </div>
 
+        <h1>Asociaciones</h1>
         <ul>
           {this.state.association.map(assoc => (
             <li key={assoc._id}>

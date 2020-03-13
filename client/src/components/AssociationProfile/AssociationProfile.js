@@ -35,23 +35,19 @@ export default class AssociationProfile extends React.Component {
       .catch(err => console.log(err));
   }
 
-  // "pets": [],
-  // "_id": "5e611f2d1408de3914b943b4",
-  // "name": "Asociación protectora de Sevilla",
-  // "tel": 622642988,
-  // "location": "Sevilla",
-
   render() {
-    // console.log(this.state.association.owner, this.state.user._id);
     return (
       <div className="AssociationProfile">
         {this.state.association.owner === this.state.user._id ? (
           <div className="AssociationProfile__container">
-            <h1>Perfil de {this.state.association.name}</h1>
+            <h1> {this.state.association.name}</h1>
             <p>Teléfono de contacto: {this.state.association.tel}</p>
             <p>Localidad: {this.state.association.location}</p>
 
-            <Link to={`/associations/${this.state.association._id}/new-pet`} className="AssociationProfile__container__btn">
+            <Link
+              to={`/associations/${this.state.association._id}/new-pet`}
+              className="AssociationProfile__container__btn"
+            >
               Crear nuevo anuncio
             </Link>
           </div>
