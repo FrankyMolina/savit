@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../../services/AuthService';
 
+import './Login.scss';
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -42,12 +44,12 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Please, login to our site</h3>
+      <div className="Login">
+        <h3>Por favor, inicie sesión para entrar en Savit :)</h3>
 
-        <form onSubmit={this.handleFormSubmit}>
-          <fieldset>
-            <label>Username:</label>
+        <form onSubmit={this.handleFormSubmit} className="Login__form">
+          <fieldset className="username">
+            <label>Username</label>
             <input
               type="text"
               name="username"
@@ -56,8 +58,8 @@ class Login extends Component {
             />
           </fieldset>
 
-          <fieldset>
-            <label>Password:</label>
+          <fieldset className="pw">
+            <label>Password</label>
             <input
               type="password"
               name="password"
@@ -66,7 +68,7 @@ class Login extends Component {
             />
           </fieldset>
 
-          <input type="submit" value="Login" />
+          <input type="submit" value="Login" className="btn"/>
         </form>
 
         <h1>{this.state.error ? 'Error' : ''}</h1>

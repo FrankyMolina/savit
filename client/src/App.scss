@@ -1,4 +1,8 @@
 
+*:focus {
+  outline: none;
+}
+
 
 .App-header {
   background-color: #6AC3AE;
@@ -22,6 +26,13 @@
   }
 
 }
+
+.Navbar {
+  position: fixed;
+  background-color: #6AC3AE;
+}
+
+
 
 
 

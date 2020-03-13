@@ -1,18 +1,67 @@
 .Landing {
+  margin-top: 85px;
+  margin-bottom: 50px;
   .Landing-img {
     width: 100vw;
   }
+  h1 {
+    text-align: center;
 
+    margin-bottom: 70px;
+    margin-top: 30px;
+    padding-bottom: 5px;
+
+    border-bottom: 1.5px solid #6ac3ae;
+  }
   &__container {
     display: flex;
     justify-content: space-around;
+    
 
     &__whatsSavit {
-        width: 25%;
+      width: 512px;
+
+      img {
+        border-radius: 10px;
+        box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.61);
+      }
+
+      &__text {
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #83cfbd6c;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      &__techs{
+        background-color: #feb69a96;
+        padding: 10px 10px 5px 10px;
+        border-radius: 5px;
+      }
     }
 
     &__howWorks {
-        width:25%;
+      width: 512px;
+
+      img {
+        border-radius: 10px;
+        box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.61);
+      }
+
+      &__text {
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #83cfbd6c;
+        text-align: center;
+        margin-bottom: 10px;
+
+        &__list {
+          background-color: #feb69a96;
+          padding: 10px 10px 5px 10px;
+          border-radius: 5px;
+        }
+      }
     }
   }
 }

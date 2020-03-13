@@ -1,0 +1,106 @@
+.Signup {
+    height: 100vh;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    h3 {
+      border-bottom: 1.5px solid #6ac3ae;
+      padding-bottom: 5px;
+    }
+  
+    &__form {
+      background-color: #83cfbd6c;
+      border-radius: 10px;
+      padding: 60px;
+  
+      box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.61);
+  
+      font-weight: bold;
+  
+      .username {
+        display: flex;
+        flex-direction: column;
+  
+        label {
+          text-align: center;
+        }
+  
+        input {
+          width: 100%;
+          border-radius: 15px;
+          border: 0;
+          padding: 6px 30px;
+  
+          margin-left: -24px;
+          margin-top: 10px;
+  
+          transition: 0.3s;
+  
+          &:focus {
+            padding: 10px 30px;
+            box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.685);
+          }
+        }
+      }
+  
+      .pw {
+        display: flex;
+        flex-direction: column;
+  
+        label {
+          text-align: center;
+        }
+  
+        input {
+          width: 100%;
+          border-radius: 15px;
+          border: 0;
+          padding: 6px 30px;
+  
+          margin-left: -24px;
+          margin-top: 10px;
+  
+          transition: 0.3s;
+  
+          &:focus {
+            padding: 10px 30px;
+            box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.685);
+          }
+        }
+      }
+  
+      .btn {
+        text-decoration: none;
+        transition: 0.3s;
+        border: 0;
+        border-radius: 10px;
+        padding: 7px;
+  
+        font-size: 16px;
+        font-weight: bold;
+  
+        background-color: white;
+  
+        margin-left: 76px;
+        margin-top: 20px;
+
+  
+        &:hover {
+          background-color: white;
+          font-size: 20px;
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 5px 5px 22px -4px rgba(0, 0, 0, 0.685);
+          margin-left: 65px;
+        }
+      }
+  
+      fieldset {
+        border: 0;
+      }
+    }
+  }
+  
